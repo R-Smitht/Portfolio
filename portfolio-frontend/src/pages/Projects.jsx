@@ -16,7 +16,7 @@ const Projects = () => {
 export default Projects
 
 function handleClick (e) {
-    console.log(e);
+    alert(e);
     this.className('epic').innerHTML('UPDATED SITE');
 }
 

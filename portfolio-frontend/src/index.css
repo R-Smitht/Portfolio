@@ -88,6 +88,10 @@ body{
   background-color: hsla(0, 0%, 0%, 0.747);
 }
 
+.card-a{
+  color: green;
+}
+
 .card .card-image{
   max-width: 60%;
   height: auto;
@@ -154,4 +158,46 @@ body{
 .footer-container::after {
   content: "";
   grid-column: 3;
+}
+
+.info-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.info-icon {
+  font-size: 1.1rem;
+  color: #555;
+  user-select: none;
+}
+
+/* Base style for the hidden text box */
+.info-text-box {
+  position: absolute;
+  bottom: 125%; /* Positions it directly above the icon */
+  left: 50%;
+  transform: translateX(-50%) translateY(200%) scale(1);
+  
+  width: max-content;
+  max-width: 200px;
+  padding: 8px 12px;
+  background-color: #222222;
+  color: #ffffff;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  
+  /* Hides it initially and enables transition */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 100;
+}
+
+/* Reveals the tooltip when hovering the container */
+.info-container:hover .info-text-box {
+  opacity: 1;
+  visibility: visible;
+  /* transform: translateX(-50%) translateY(200%) scale(1); */
 }
